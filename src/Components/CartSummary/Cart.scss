@@ -3,6 +3,18 @@
         width: 50%;
         float: left;
         .left{
+            .delete{
+                margin-left: 270px;
+                margin-top: -25px;
+                .remove-icon{
+                    cursor: pointer;
+                    background-color: rgb(218, 16, 16);
+                    border: none;
+                    border-radius: 5px;
+                    color:white;
+                    padding: 3px 7px;
+                }
+            }
             .left-top{
                 display: flex;
                 h1{

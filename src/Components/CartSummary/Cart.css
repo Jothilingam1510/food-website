@@ -2,6 +2,18 @@
   width: 50%;
   float: left;
 }
+.both .cart .left .delete {
+  margin-left: 270px;
+  margin-top: -25px;
+}
+.both .cart .left .delete .remove-icon {
+  cursor: pointer;
+  background-color: rgb(218, 16, 16);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 3px 7px;
+}
 .both .cart .left .left-top {
   display: flex;
 }

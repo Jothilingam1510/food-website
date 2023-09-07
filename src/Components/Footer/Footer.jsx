@@ -5,7 +5,7 @@ import './Footer.css'
 const Footer = () => {
   return (
 <>
-<footer className='footer'>
+<div className='footer-main'>
     <div className='footer-down'>
         <div className='groupbig'>
             <img src={Groupbig} alt=''/>
@@ -30,7 +30,7 @@ const Footer = () => {
 
             <p>Copyright © 2021 Specialist Foods. All rights reserved.</p>
     </div>
-</footer>
+    </div>
 </>  
 )
 }

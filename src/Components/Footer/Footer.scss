@@ -1,4 +1,4 @@
-footer{
+.footer-main{
     background-color: #08316D;
     color: white;
     right: 0;
@@ -12,12 +12,13 @@ footer{
         margin-right: 60px;
     }
     .footer-down{
+        hr{
+            margin-left: 20px;
+            rotate: 180deg;
+        }
         .groupbig{
             display: flex;
-            hr{
-                margin-left: 20px;
-                rotate: 180deg;
-            }
+           
             .hrleft{
                 margin-top: 50px;
                 padding-left: 30px;

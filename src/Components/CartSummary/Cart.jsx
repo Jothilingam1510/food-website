@@ -6,34 +6,45 @@ import shallots from '../../images/shallots.png'
 import nonveg from '../../images/NonVeg.png'
 import './Cart.css'
 import Price from '../PriceSummary/Price'
-const Data=[
-  {
-    id:1,
-    imgSrc:chicken,
-    title:'Chicken Salad',
-    para:'About dish Lorem ipsum dummy text lorem ipsum dummy text  lorem ipsum dummy text more',
-    price:230
-  },
-  {
-    id:2,
-    imgSrc:pizza,
-    title:'Cream of Tartar',
-    para:'About dish Lorem ipsum dummy text lorem ipsum dummy text',
-    price:200
-  },
-]
 
-const Advance =[
-    {
-        id:3,
-        imgSrc:shallots,
-        title:'Shallots',
-        para:'About dish Lorem ipsum dummy text lorem ipsum dummy text  lorem ipsum dummy text more',
-        price:300
-      }
-]
 
 const Cart = () => {
+  const [Data,setData]=useState([
+    {
+      id:1,
+      imgSrc:chicken,
+      title:'Chicken Salad',
+      para:'About dish Lorem ipsum dummy text lorem ipsum dummy text  lorem ipsum dummy text more',
+      price:230
+    },
+    {
+      id:2,
+      imgSrc:pizza,
+      title:'Cream of Tartar',
+      para:'About dish Lorem ipsum dummy text lorem ipsum dummy text',
+      price:200
+    },
+
+    
+  ])
+  
+  const [Advance ,setAdvance] = useState([
+      {
+          id:3,
+          imgSrc:shallots,
+          title:'Shallots',
+          para:'About dish Lorem ipsum dummy text lorem ipsum dummy text  lorem ipsum dummy text more',
+          price:300
+        },
+        {
+          id:4,
+          imgSrc:shallots,
+          title:'Shallots',
+          para:'About dish Lorem ipsum dummy text lorem ipsum dummy text  lorem ipsum dummy text more',
+          price:500
+        },
+       
+  ])
   const [quantity, setQuantity] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
 
@@ -86,7 +97,15 @@ const Cart = () => {
     });
   };
 
-  
+  //handle delete option
+  const removeItemById = (itemId) => {
+    const updatedData = Data.filter((item) => item.id !== itemId);
+    setData(updatedData);
+  };
+  const removeItemById1 = (itemId) => {
+    const updatedData = Advance.filter((item) => item.id !== itemId);
+    setAdvance(updatedData);
+  };
    return (
     
     <>
@@ -122,6 +141,9 @@ const Cart = () => {
             <h5>Egg</h5>
           </div>
         </div>
+            <div className='delete'>
+              <button  onClick={() => removeItemById(item.id)} className='remove-icon'>Delete</button>
+            </div>    
         <div className='maths'>
             <button onClick={()=>handledecrement(item.id)}  className='minus'>-</button>
             <h4 className='count'> {quantity[item.id]||1}</h4>  
@@ -160,6 +182,9 @@ const Cart = () => {
             <h5>Egg</h5>
           </div>
         </div>
+        <div className='delete'>
+        <button onClick={() => removeItemById1(item.id)} className='remove-icon'>Delete</button>
+            </div> 
         <div className='maths'>
             <button onClick={()=>handledecrement(item.id)} className='minus'>-</button>
             <h4 className='count'> {quantity[item.id]||1}</h4>  
